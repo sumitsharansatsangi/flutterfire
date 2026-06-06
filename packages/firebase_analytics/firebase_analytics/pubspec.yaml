@@ -5,7 +5,7 @@ description:
 homepage: https://firebase.google.com/docs/analytics
 repository: https://github.com/firebase/flutterfire/tree/main/packages/firebase_analytics/firebase_analytics
 version: 12.4.2
-resolution: workspace
+publish_to: none
 topics:
   - firebase
   - analytics
@@ -16,14 +16,18 @@ false_secrets:
   - example/**
 
 environment:
-  sdk: '^3.6.0'
-  flutter: '>=3.27.0'
+  sdk: '^3.12.0'
+  flutter: '>=3.44.0'
 
 dependencies:
-  firebase_analytics_platform_interface: ^6.0.2
-  firebase_analytics_web: ^0.6.1+8
-  firebase_core: ^4.10.0
-  firebase_core_platform_interface: ^7.0.1
+  firebase_analytics_platform_interface:
+    git: https://github.com/kumsumit/firebase_analytics_platform_interface.git
+  firebase_analytics_web:
+    git: https://github.com/kumsumit/firebase_analytics_web.git
+  firebase_core:
+    git: https://github.com/kumsumit/firebase_core.git
+  firebase_core_platform_interface: 
+    git: https://github.com/kumsumit/firebase_core_platform_interface.git
   flutter:
     sdk: flutter
 
