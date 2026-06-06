@@ -1,3 +1,4 @@
+import com.android.build.api.dsl.LibraryExtension
 import java.util.regex.Pattern
 
 var libraryVersionName = "UNKNOWN"
@@ -18,7 +19,7 @@ if (pubspec.exists()) {
     }
 }
 
-android {
+extensions.configure<LibraryExtension> {
     defaultConfig {
         buildConfigField(
             "String",
