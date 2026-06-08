@@ -28,7 +28,7 @@ final class GenerativeModel extends BaseApiClientModel {
   /// a known and supported model. If not, attempts to generate content
   /// will fail.
   ///
-  /// The optional [safetySettings] and [generationConfig] can be used to
+  /// The optional [safetySettings] and [_generationConfig] can be used to
   /// control and guide the generation. See [SafetySetting] and
   /// [GenerationConfig] for details.
   ///
@@ -41,15 +41,12 @@ final class GenerativeModel extends BaseApiClientModel {
     FirebaseAppCheck? appCheck,
     FirebaseAuth? auth,
     List<SafetySetting>? safetySettings,
-    GenerationConfig? generationConfig,
+    this._generationConfig,
     this.tools,
-    ToolConfig? toolConfig,
-    Content? systemInstruction,
+    this._toolConfig,
+    this._systemInstruction,
     http.Client? httpClient,
   })  : _safetySettings = safetySettings ?? [],
-        _generationConfig = generationConfig,
-        _toolConfig = toolConfig,
-        _systemInstruction = systemInstruction,
         super(
             serializationStrategy: useVertexBackend
                 ? VertexSerialization()
@@ -72,15 +69,12 @@ final class GenerativeModel extends BaseApiClientModel {
     FirebaseAppCheck? appCheck,
     FirebaseAuth? auth,
     List<SafetySetting>? safetySettings,
-    GenerationConfig? generationConfig,
+    this._generationConfig,
     this.tools,
-    ToolConfig? toolConfig,
-    Content? systemInstruction,
+    this._toolConfig,
+    this._systemInstruction,
     ApiClient? apiClient,
   })  : _safetySettings = safetySettings ?? [],
-        _generationConfig = generationConfig,
-        _toolConfig = toolConfig,
-        _systemInstruction = systemInstruction,
         super(
             serializationStrategy: useVertexBackend
                 ? VertexSerialization()

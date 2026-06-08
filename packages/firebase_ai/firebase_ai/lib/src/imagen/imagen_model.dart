@@ -38,10 +38,9 @@ final class ImagenModel extends BaseApiClientModel {
       bool? useLimitedUseAppCheckTokens,
       FirebaseAppCheck? appCheck,
       FirebaseAuth? auth,
-      ImagenGenerationConfig? generationConfig,
+      this._generationConfig,
       ImagenSafetySettings? safetySettings})
-      : _generationConfig = generationConfig,
-        _safetySettings = safetySettings,
+      : _safetySettings = safetySettings,
         _useVertexBackend = useVertexBackend,
         super(
             serializationStrategy: useVertexBackend

@@ -31,18 +31,13 @@ class LiveSession {
   // ignore: public_member_api_docs
   LiveSession._(
     this._ws, {
-    required String uri,
+    required this._uri,
     required Map<String, String> headers,
-    required String modelString,
-    Content? systemInstruction,
-    List<Tool>? tools,
-    LiveGenerationConfig? liveGenerationConfig,
-  })  : _uri = uri,
-        _headers = headers,
-        _modelString = modelString,
-        _systemInstruction = systemInstruction,
-        _tools = tools,
-        _liveGenerationConfig = liveGenerationConfig,
+    required this._modelString,
+    this._systemInstruction,
+    this._tools,
+    this._liveGenerationConfig,
+  })  : _headers = headers,
         _messageController = StreamController<LiveServerResponse>.broadcast() {
     _listenToWebSocket();
   }

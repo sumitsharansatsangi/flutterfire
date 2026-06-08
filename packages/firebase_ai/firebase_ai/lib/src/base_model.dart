@@ -258,10 +258,9 @@ final class _TemplateGoogleAIUri implements _TemplateUri {
 /// Firebase AI API. It is not intended to be instantiated directly.
 abstract class BaseModel {
   BaseModel._(
-      {required SerializationStrategy serializationStrategy,
+      {required this._serializationStrategy,
       required _ModelUri modelUri})
-      : _serializationStrategy = serializationStrategy,
-        _modelUri = modelUri;
+      : _modelUri = modelUri;
 
   final SerializationStrategy _serializationStrategy;
   final _ModelUri _modelUri;
@@ -328,9 +327,8 @@ abstract class BaseApiClientModel extends BaseModel {
   BaseApiClientModel({
     required super.serializationStrategy,
     required super.modelUri,
-    required ApiClient client,
-  })  : _client = client,
-        super._();
+    required this._client,
+  })  : super._();
 
   final ApiClient _client;
 
@@ -355,8 +353,7 @@ abstract class BaseTemplateApiClientModel extends BaseApiClientModel {
       {required super.serializationStrategy,
       required super.modelUri,
       required super.client,
-      required _TemplateUri templateUri})
-      : _templateUri = templateUri;
+      required this._templateUri});
 
   final _TemplateUri _templateUri;
 

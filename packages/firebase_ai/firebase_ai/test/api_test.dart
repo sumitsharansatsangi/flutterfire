@@ -852,7 +852,7 @@ void main() {
         };
         final response =
             VertexSerialization().parseGenerateContentResponse(json);
-        final ratings = response.candidates.first.safetyRatings!;
+        final ratings = response.candidates.first.safetyRatings;
         expect(ratings.map((r) => r.category), [
           HarmCategory.imageDangerousContent,
           HarmCategory.imageSexuallyExplicit,

@@ -29,12 +29,11 @@ class FirebaseAI extends FirebasePluginPlatform {
   FirebaseAI._({
     required this.app,
     required this.location,
-    required bool useVertexBackend,
+    required this._useVertexBackend,
     this.appCheck,
     this.auth,
     this.useLimitedUseAppCheckTokens = false,
-  })  : _useVertexBackend = useVertexBackend,
-        super(app.name, 'plugins.flutter.io/firebase_vertexai');
+  })  : super(app.name, 'plugins.flutter.io/firebase_vertexai');
 
   /// The [FirebaseApp] for this current [FirebaseAI] instance.
   FirebaseApp app;

@@ -34,21 +34,15 @@ final class LiveGenerativeModel extends BaseModel {
       required String location,
       required FirebaseApp app,
       required bool useVertexBackend,
-      bool? useLimitedUseAppCheckTokens,
-      FirebaseAppCheck? appCheck,
-      FirebaseAuth? auth,
-      LiveGenerationConfig? liveGenerationConfig,
-      List<Tool>? tools,
-      Content? systemInstruction})
+      this._useLimitedUseAppCheckTokens,
+      this._appCheck,
+      this._auth,
+      this._liveGenerationConfig,
+      this._tools,
+      this._systemInstruction})
       : _app = app,
         _location = location,
         _useVertexBackend = useVertexBackend,
-        _appCheck = appCheck,
-        _auth = auth,
-        _liveGenerationConfig = liveGenerationConfig,
-        _tools = tools,
-        _systemInstruction = systemInstruction,
-        _useLimitedUseAppCheckTokens = useLimitedUseAppCheckTokens,
         super._(
           serializationStrategy: VertexSerialization(),
           modelUri: useVertexBackend

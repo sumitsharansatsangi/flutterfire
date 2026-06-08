@@ -41,12 +41,10 @@ final _utf8Json = json.fuse(utf8);
 final class HttpApiClient implements ApiClient {
   ///Constructor
   HttpApiClient(
-      {required String apiKey,
+      {required this._apiKey,
       http.Client? httpClient,
-      FutureOr<Map<String, String>> Function()? requestHeaders})
-      : _apiKey = apiKey,
-        _httpClient = httpClient,
-        _requestHeaders = requestHeaders;
+      this._requestHeaders})
+      : _httpClient = httpClient;
   final String _apiKey;
   final http.Client? _httpClient;
 

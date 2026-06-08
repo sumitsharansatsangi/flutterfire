@@ -67,7 +67,7 @@ Matcher matchesGenerateContentResponse(GenerateContentResponse response) =>
           'promptFeedback',
           response.promptFeedback == null
               ? isNull
-              : matchesPromptFeedback(response.promptFeedback!),
+              : matchesPromptFeedback(response.promptFeedback),
         );
 
 Matcher matchesPromptFeedback(
