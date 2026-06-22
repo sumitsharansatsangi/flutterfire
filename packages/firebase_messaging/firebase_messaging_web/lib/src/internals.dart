@@ -3,7 +3,7 @@
 // BSD-style license that can be found in the LICENSE file.
 
 import 'package:firebase_core/firebase_core.dart';
-import 'package:_flutterfire_internals/_flutterfire_internals.dart'
+import 'package:flutterfire_internals/flutterfire_internals.dart'
     as internals;
 
 /// Will return a [FirebaseException] from a thrown web error.

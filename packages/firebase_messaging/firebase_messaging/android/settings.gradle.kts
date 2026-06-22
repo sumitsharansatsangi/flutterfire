@@ -1,5 +1,5 @@
 pluginManagement {
-    val androidGradlePluginVersion = "8.3.0"
+    val androidGradlePluginVersion = "9.2.1"
 
     plugins {
         id("com.android.application") version androidGradlePluginVersion
