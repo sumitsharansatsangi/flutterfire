@@ -28,7 +28,7 @@ dependencies:
     git: "https://github.com/kumsumit/firebase_messaging_web.git"
   flutter:
     sdk: flutter
-  meta: ^1.18.3
+  meta: ^1.19.0
 
 dev_dependencies:
   async: ^2.13.1

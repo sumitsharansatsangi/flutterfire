@@ -33,7 +33,7 @@ Pod::Spec.new do |s|
   s.dependency 'Flutter'
 
   s.resource_bundles = {
-      "#{s.module_name}_Privacy" => 'Resources/PrivacyInfo.xcprivacy'
+      "#{s.module_name}_Privacy" => 'firebase_messaging/Sources/firebase_messaging/Resources/PrivacyInfo.xcprivacy'
   }
 
   s.dependency 'firebase_core'
