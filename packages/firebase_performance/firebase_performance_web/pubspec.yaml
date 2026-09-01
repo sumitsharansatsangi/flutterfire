@@ -9,8 +9,8 @@ environment:
   flutter: '>=3.44.0'
 
 dependencies:
-  _flutterfire_internals:
-    git: https://github.com/kumsumit/_flutterfire_internals.git
+  flutterfire_internals:
+    git: https://github.com/kumsumit/flutterfire_internals.git
   firebase_core:
     git: https://github.com/kumsumit/firebase_core.git
   firebase_core_web:

@@ -26,7 +26,7 @@ class UserCredential {
   /// methods.
   User? get user {
     // TODO(rousselGit): cache the `user` instance or override == so that ".user == .user"
-    return _delegate.user == null ? null : User._(_auth, _delegate.user!);
+    return _delegate.user == null ? null : User._(_auth, _delegate.user);
   }
 
   @override

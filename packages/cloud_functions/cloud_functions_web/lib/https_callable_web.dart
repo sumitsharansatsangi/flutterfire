@@ -80,7 +80,7 @@ class HttpsCallableWeb extends HttpsCallablePlatform {
     final JSAny? parametersJS = parameters?.jsify();
     web.AbortSignal? signal;
     if (options.webAbortSignal != null) {
-      signal = _createJsAbortSignal(options.webAbortSignal!);
+      signal = _createJsAbortSignal(options.webAbortSignal);
     }
     interop.HttpsCallableStreamOptions callableStreamOptions =
         interop.HttpsCallableStreamOptions(

@@ -2,6 +2,12 @@
 # Use of this source code is governed by a BSD-style license that can be
 # in the LICENSE file.
 
+analyzer:
+  exclude:
+    - build/**
+    - android/**
+    - ios/**
+    - web/**
 include: ../../../../analysis_options.yaml
 linter:
   rules:

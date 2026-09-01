@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:firebase_core/firebase_core.dart' show FirebaseException;
-import 'package:_flutterfire_internals/_flutterfire_internals.dart';
+import 'package:flutterfire_internals/flutterfire_internals.dart';
 import 'package:flutter/services.dart';
 
 /// Catches a [PlatformException] and returns an [Exception].

@@ -9,12 +9,10 @@ import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 /// [AggregateQuerySnapshotPlatform] represents a response to an [AggregateQueryPlatform] request.
 class AggregateQuerySnapshotPlatform extends PlatformInterface {
   AggregateQuerySnapshotPlatform({
-    required int? count,
+    required this._count,
     required List<AggregateQueryResponse> sum,
-    required List<AggregateQueryResponse> average,
-  })  : _count = count,
-        _sum = sum,
-        _average = average,
+    required this._average,
+  })  : _sum = sum,
         super(token: _token);
 
   static final Object _token = Object();

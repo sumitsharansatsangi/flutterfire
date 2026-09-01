@@ -12,8 +12,8 @@ class ActionCodeInfo {
   @protected
   ActionCodeInfo({
     required this.operation,
-    required ActionCodeInfoData data,
-  }) : _data = data;
+    required this._data,
+  });
 
   ActionCodeInfoOperation operation;
 

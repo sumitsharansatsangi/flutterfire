@@ -2,8 +2,8 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-import 'package:_flutterfire_internals/_flutterfire_internals.dart';
-import 'package:_flutterfire_internals/src/interop_shimmer.dart';
+import 'package:flutterfire_internals/flutterfire_internals.dart';
+import 'package:flutterfire_internals/src/interop_shimmer.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

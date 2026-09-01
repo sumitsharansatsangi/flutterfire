@@ -569,7 +569,7 @@ class _AuthGateState extends State<AuthGate> {
 
     if (result.status == LoginStatus.success) {
       // Get access token
-      final AccessToken accessToken = result.accessToken!;
+      final AccessToken accessToken = result.accessToken;
 
       // Login with token
       await auth.signInWithCredential(

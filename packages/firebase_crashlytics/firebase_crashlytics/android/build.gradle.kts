@@ -36,24 +36,24 @@ fun getRootProjectExtOrCoreProperty(
         ?: throw GradleException("Property '$name' not found")
 }
 
-val compileSdk: Int by extra
-val minSdk: Int by extra
-val javaVersion: JavaVersion by extra
+val rootCompileSdk: Int by extra
+val rootMinSdk: Int by extra
+val rootJavaVersion: JavaVersion by extra
 
 android {
     namespace = "io.flutter.plugins.firebase.crashlytics"
 
-    compileSdk = compileSdk
+    compileSdk = rootCompileSdk
 
     defaultConfig {
-        minSdk = minSdk
+        minSdk = rootMinSdk
         testInstrumentationRunner =
             "androidx.test.runner.AndroidJUnitRunner"
     }
 
     compileOptions {
-        sourceCompatibility = javaVersion
-        targetCompatibility = javaVersion
+        sourceCompatibility = rootJavaVersion
+        targetCompatibility = rootJavaVersion
     }
 
     buildFeatures {

@@ -80,7 +80,7 @@ class Pipeline {
     final results = platformSnapshot.results.map((platformResult) {
       return PipelineResult(
         document: platformResult.document != null
-            ? _JsonDocumentReference(_firestore, platformResult.document!)
+            ? _JsonDocumentReference(_firestore, platformResult.document)
             : null,
         createTime: platformResult.createTime,
         updateTime: platformResult.updateTime,

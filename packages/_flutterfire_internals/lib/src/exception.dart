@@ -5,6 +5,7 @@
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
+import 'package:stack_trace/stack_trace.dart';
 
 /// Catches a [PlatformException] and returns an [Exception].
 ///
@@ -49,12 +50,8 @@ FirebaseException platformExceptionToFirebaseException(
   String? code;
   String message = platformException.message ?? '';
 
-  if (details != null) {
-    code = details['code'] as String?;
-    message = details['message'] as String? ?? message;
-  } else if (rawDetails != null) {
-    message = rawDetails.toString();
-  }
+  code = details?['code'] as String?;
+  message = details?['message'] as String? ?? message;
 
   return FirebaseException(
     plugin: plugin,
@@ -72,11 +69,18 @@ extension EventChannelExtension on EventChannel {
   }) {
     final incomingStackTrace = StackTrace.current;
 
-    return receiveBroadcastStream(arguments).handleError((Object error) {
-      // TODO(rrousselGit): use package:stack_trace to merge the error's StackTrace with "incomingStackTrace"
-      // This TODO assumes that EventChannel is updated to actually pass a StackTrace
-      // (as it currently only sends StackTrace.empty)
-      return onError(error, incomingStackTrace);
+    return receiveBroadcastStream(arguments).handleError((
+      Object error,
+      StackTrace stackTrace,
+    ) {
+      if (stackTrace == StackTrace.empty) {
+        return onError(error, incomingStackTrace);
+      }
+
+      return onError(
+        error,
+        Chain([Trace.from(stackTrace), Trace.from(incomingStackTrace)]),
+      );
     });
   }
 }

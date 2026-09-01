@@ -200,4 +200,5 @@ String? _getDebugToken({
     case TargetPlatform.linux:
       return null;
   }
+  return null;
 }

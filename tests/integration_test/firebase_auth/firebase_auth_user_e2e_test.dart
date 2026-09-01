@@ -81,7 +81,7 @@ void main() {
               email: email,
               password: testPassword,
             );
-            final user = userCredential.user!;
+            final user = userCredential.user;
 
             // needed for method to throw an error
             await FirebaseAuth.instance.signOut();
@@ -112,7 +112,7 @@ void main() {
               email: email,
               password: testPassword,
             );
-            final user = userCredential.user!;
+            final user = userCredential.user;
 
             // Test
             final idTokenResult = await user.getIdTokenResult();
@@ -147,7 +147,7 @@ void main() {
               ),
             );
 
-            final linkedUser = linkedUserCredential.user!;
+            final linkedUser = linkedUserCredential.user;
             expect(linkedUser.email, equals(email));
             expect(
               linkedUser.email,
